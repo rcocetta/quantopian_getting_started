@@ -62,7 +62,7 @@ def before_trading_start(context, data):
 def rebalance(context, data): 
     alpha = context.pipeline_data.sentiment_score
    
-    if not alpha.empty():
+    if not alpha.empty:
         objective = opt.MaximizeAlpha(alpha) 
             #Constrain position size
         constrain_position_size = opt.PositionConcentration.with_equal_bounds(
